@@ -1,0 +1,224 @@
+:root{
+    --Purple-50: hsl(260, 100%, 95%);
+    --Purple-300: hsl(264, 82%, 80%);
+    --Purple-500: hsl(263, 55%, 52%);
+
+    --White: hsl(0, 0%, 100%);
+    --Grey-100: hsl(214, 17%, 92%);
+    --Grey-200: hsl(0, 0%, 81%);
+    --Grey-400: hsl(224, 10%, 45%);
+    --Grey-500: hsl(217, 19%, 35%);
+    --Dark-blue: hsl(219, 29%, 14%);
+    --Black: hsl(0, 0%, 7%);
+    font-size: 15px;
+}
+
+@font-face {
+    font-family: 'Barlow Semi Condensed';
+    src: local('Barlow Semi Condensed Medium'),
+        local('BarlowSemiCondensed-Medium'),
+        url(../fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-Medium.ttf) format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Barlow Semi Condensed';
+    src:local('Barlow Semi Condensed SemiBold'),
+        local('BarlowSemiCondensed-SemiBold'),
+        url(../fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-SemiBold.ttf) format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+body{
+    font-family: 'Barlow Semi Condensed';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--Grey-100);
+    padding-block: 4.867rem;
+    margin: 0;
+}
+.visually-hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+    clip-path: inset(50%);
+    border: 0;
+    white-space:nowrap;
+}
+.quot_hidden{
+    display: none;
+}
+
+.grid-table{
+    display: grid;
+    grid-template:repeat(5,auto)/1fr;
+    justify-content: center;
+    gap: 2.13rem;
+}
+
+.testimonial-card{
+    padding:2.067rem 2rem 2.13rem;
+    border-radius: 8px;
+    width: 16.34rem;
+    box-shadow: 4rem 4rem 1.5rem var(--Grey-200);
+}
+.testimonial-card--daniel{
+    background-color: var(--Purple-500);
+    color:var(--White)
+}
+.head_card{
+    display: flex;
+    gap:1rem;
+    margin: 0;
+}
+.profile_picture_container{
+    box-sizing: border-box;
+    width: 2.13rem;
+    height: 2.13rem;
+    border: 2px solid var(--Purple-300);
+    border-radius: 50%;
+    overflow: hidden;
+}
+.profile_picture_container img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.testimonial-card__name{
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    
+}
+.testimonial-card__status{
+    margin: 0.133rem 0 0;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.dictum_text{
+    font-weight: 600;
+    font-size: 20px;
+    padding-inline-start: 0.13rem;
+    padding-inline-end: 0.13rem;
+    margin: 1rem 0 1.067rem;
+}
+blockquote{
+    padding-inline: 0.13rem 0.267rem;
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.385;
+}
+
+.testimonial-card--jonathan{
+    background-color: var(--Grey-500);
+    color: var(--White);
+}
+
+.testimonial-card--jeanette{
+    background-color: var(--White);
+    color: var(--Grey-500);
+    padding-top:2rem;
+}
+.testimonial-card--jeanette .testimonial-card__name{
+    margin-top: 0.067rem;
+}
+.testimonial-card--jeanette .testimonial-card__status{
+    margin-top: 0.067rem;
+}
+.testimonial-card--jeanette .dictum_text{
+    margin-top: 0.933rem;
+    margin-bottom: 1.133rem;
+}
+
+.testimonial-card--patrick{
+    background-color: var(--Dark-blue);
+    color: var(--Grey-200);
+}
+
+.testimonial-card--kira{
+    background-color: var(--White);
+    color: var(--Grey-500);
+}
+
+.text_grey{
+    color: var(--Grey-200);
+}
+.border-white{
+    border-color: var(--White);
+}
+.border_grey{
+    border-color: var(--Grey-500);
+}
+@media(min-width:1024px){
+    body{
+        padding-block: 15.267rem 14.533rem;
+    }
+    .grid-table{
+        grid-template:repeat(2,auto)/17rem 16.87rem 17rem 17rem;
+        place-content: center;
+        grid-template-areas: 'daniel daniel jonathan kira'
+                             'jeanette patrick patrick kira';
+        gap:1.6rem 2.13rem;
+        padding-inline-start: 0.2667rem;
+    }
+    
+    .testimonial-card--daniel{
+        grid-area: daniel;
+        
+    }
+    .testimonial-card--jonathan{
+        grid-area: jonathan;
+ 
+        
+    }
+    .testimonial-card--jeanette{
+        grid-area: jeanette;
+
+    }
+    .testimonial-card--patrick{
+        grid-area: patrick;
+
+    }
+    .testimonial-card--kira{
+        grid-area: kira;
+        padding-right: 1.93rem;
+    }
+
+    .testimonial-card{
+        width: auto;      
+        position: relative;
+        z-index: 0;
+    }
+    .dictum_text{
+        z-index: 99;
+    }
+    .quot_hidden{
+        position: absolute;
+        display: block;
+        z-index: -1;
+        top: 0;
+        right: 4rem;
+    }
+    .head_card{
+        gap:0.933rem;
+    }
+    .testimonial-card--jeanette{
+        padding-top:2.067rem;
+    }
+
+    .testimonial-card--jeanette .dictum_text{
+        margin-top: 0.933rem;
+        margin-bottom: 1.133rem;
+    }
+
+    
+}
